@@ -21,6 +21,7 @@ namespace MusicApp
         public DbSet<Album> Albums { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
         public DbSet<Song> Songs { get; set; }
+        public DbSet<Interaction> Interactions { get; set; }
 
     }
 }

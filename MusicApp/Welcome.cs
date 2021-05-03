@@ -39,7 +39,7 @@ namespace MusicApp
                         Global.UserId = user.Id;
                         MessageBox.Show("Successfully logged in. Redirecting...");
                         MainMenu main = new MainMenu();
-                        //Close();
+                        Hide();
                         main.Show();
                     }
                     else MessageBox.Show("Incorrect password.");

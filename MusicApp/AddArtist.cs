@@ -30,6 +30,9 @@ namespace MusicApp
                 ctx.SaveChanges();
             }
             MessageBox.Show($"{txtArtistName.Text} has been added.");
+            Close();
+            MainMenu main = new MainMenu();
+            main.Show();
         }
     }
 }

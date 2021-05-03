@@ -38,11 +38,14 @@ namespace MusicApp
                 };
                 foreach (var item in lstSongs.Items)
                 {
+                    ctx.Songs.Attach(item as Song);
                     newPlaylist.Songs.Add(item as Song);
                 }                
                 ctx.Playlists.Add(newPlaylist);
                 ctx.SaveChanges();
                 MessageBox.Show($"Playlist {txtPlaylistName.Text} has been added.");
+                MainMenu main = new MainMenu();
+                main.Show();
                 Close();
             }
         }

@@ -28,16 +28,21 @@ namespace MusicApp
         {
             using (var ctx = new AccountContext())
             {
-                ctx.Albums.Add(new Album
+                var newAlbum = new Album
                 {
                     Name = txtName.Text,
-                    Artist = lstArtists.SelectedItem as Artist,
+                    Artist = ctx.Artists.FirstOrDefault( x => x.Id == ((Artist)lstArtists.SelectedItem).Id),
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
-                });
+                };
+                
+                ctx.Albums.Add(newAlbum);
                 ctx.SaveChanges();
             }
             MessageBox.Show($"Album \"{txtName.Text}\" created!");
+            Close();
+            MainMenu main = new MainMenu();
+            main.Show();
 
         }
     }

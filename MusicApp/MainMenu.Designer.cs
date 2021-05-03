@@ -34,11 +34,13 @@ namespace MusicApp
             this.btnAddSong = new System.Windows.Forms.Button();
             this.lblPlaylists = new System.Windows.Forms.Label();
             this.btnAddPlaylist = new System.Windows.Forms.Button();
+            this.lstPlaylists = new System.Windows.Forms.ListBox();
+            this.lvwSongs = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // btnAddArtist
             // 
-            this.btnAddArtist.Location = new System.Drawing.Point(527, 51);
+            this.btnAddArtist.Location = new System.Drawing.Point(502, 13);
             this.btnAddArtist.Name = "btnAddArtist";
             this.btnAddArtist.Size = new System.Drawing.Size(75, 23);
             this.btnAddArtist.TabIndex = 0;
@@ -48,7 +50,7 @@ namespace MusicApp
             // 
             // btnAddAlbum
             // 
-            this.btnAddAlbum.Location = new System.Drawing.Point(527, 93);
+            this.btnAddAlbum.Location = new System.Drawing.Point(583, 13);
             this.btnAddAlbum.Name = "btnAddAlbum";
             this.btnAddAlbum.Size = new System.Drawing.Size(75, 23);
             this.btnAddAlbum.TabIndex = 1;
@@ -58,11 +60,11 @@ namespace MusicApp
             // 
             // btnAddSong
             // 
-            this.btnAddSong.Location = new System.Drawing.Point(527, 137);
+            this.btnAddSong.Location = new System.Drawing.Point(664, 13);
             this.btnAddSong.Name = "btnAddSong";
             this.btnAddSong.Size = new System.Drawing.Size(75, 23);
             this.btnAddSong.TabIndex = 2;
-            this.btnAddSong.Text = "Add Song(s)";
+            this.btnAddSong.Text = "Add Song";
             this.btnAddSong.UseVisualStyleBackColor = true;
             this.btnAddSong.Click += new System.EventHandler(this.btnAddSong_Click);
             // 
@@ -77,7 +79,7 @@ namespace MusicApp
             // 
             // btnAddPlaylist
             // 
-            this.btnAddPlaylist.Location = new System.Drawing.Point(136, 13);
+            this.btnAddPlaylist.Location = new System.Drawing.Point(88, 8);
             this.btnAddPlaylist.Name = "btnAddPlaylist";
             this.btnAddPlaylist.Size = new System.Drawing.Size(75, 23);
             this.btnAddPlaylist.TabIndex = 4;
@@ -85,11 +87,30 @@ namespace MusicApp
             this.btnAddPlaylist.UseVisualStyleBackColor = true;
             this.btnAddPlaylist.Click += new System.EventHandler(this.btnAddPlaylist_Click);
             // 
+            // lstPlaylists
+            // 
+            this.lstPlaylists.FormattingEnabled = true;
+            this.lstPlaylists.Location = new System.Drawing.Point(16, 51);
+            this.lstPlaylists.Name = "lstPlaylists";
+            this.lstPlaylists.Size = new System.Drawing.Size(147, 381);
+            this.lstPlaylists.TabIndex = 5;
+            // 
+            // lvwSongs
+            // 
+            this.lvwSongs.HideSelection = false;
+            this.lvwSongs.Location = new System.Drawing.Point(170, 51);
+            this.lvwSongs.Name = "lvwSongs";
+            this.lvwSongs.Size = new System.Drawing.Size(488, 381);
+            this.lvwSongs.TabIndex = 6;
+            this.lvwSongs.UseCompatibleStateImageBehavior = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lvwSongs);
+            this.Controls.Add(this.lstPlaylists);
             this.Controls.Add(this.btnAddPlaylist);
             this.Controls.Add(this.lblPlaylists);
             this.Controls.Add(this.btnAddSong);
@@ -109,5 +130,7 @@ namespace MusicApp
         private System.Windows.Forms.Button btnAddSong;
         private System.Windows.Forms.Label lblPlaylists;
         private System.Windows.Forms.Button btnAddPlaylist;
+        private System.Windows.Forms.ListBox lstPlaylists;
+        private System.Windows.Forms.ListView lvwSongs;
     }
 }

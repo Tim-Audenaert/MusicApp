@@ -34,15 +34,18 @@ namespace MusicApp
                 ctx.Songs.Add(new Song
                 {
                     Title = txtTitle.Text,
-                    Album = lstAlbums.SelectedItem as Album,
-                    Artist = lstArtists.SelectedItem as Artist,
+                    Album = ctx.Albums.FirstOrDefault(x => x.Id == ((Album)lstAlbums.SelectedItem).Id),
+                    Artist = ctx.Artists.FirstOrDefault(x => x.Id == ((Artist)lstArtists.SelectedItem).Id),
                     Length = DateTime.Now,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
-                });
+                }); ;
                 ctx.SaveChanges();
             }
-            MessageBox.Show($"{txtTitle.Text} has been added to the album \"{lstAlbums.SelectedItem.ToString()}\".");
+            MessageBox.Show($"{txtTitle.Text} has been added to the album.");
+            Close();
+            MainMenu main = new MainMenu();
+            main.Show();
         }
     }
 }
