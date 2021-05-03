@@ -32,8 +32,8 @@ namespace MusicApp
             this.lblPlaylistName = new System.Windows.Forms.Label();
             this.txtPlaylistName = new System.Windows.Forms.TextBox();
             this.btnAddPlaylist = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lstSongs = new System.Windows.Forms.ListBox();
+            this.lstPlaylistSongs = new System.Windows.Forms.ListBox();
             this.btnAddSong = new System.Windows.Forms.Button();
             this.btnRemoveSong = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -62,39 +62,41 @@ namespace MusicApp
             this.btnAddPlaylist.TabIndex = 2;
             this.btnAddPlaylist.Text = "Add Playlist";
             this.btnAddPlaylist.UseVisualStyleBackColor = true;
+            this.btnAddPlaylist.Click += new System.EventHandler(this.btnAddPlaylist_Click);
             // 
-            // listBox1
+            // lstSongs
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 91);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 3;
+            this.lstSongs.FormattingEnabled = true;
+            this.lstSongs.Location = new System.Drawing.Point(12, 91);
+            this.lstSongs.Name = "lstSongs";
+            this.lstSongs.Size = new System.Drawing.Size(120, 95);
+            this.lstSongs.TabIndex = 3;
             // 
-            // listBox2
+            // lstPlaylistSongs
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(220, 91);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
-            this.listBox2.TabIndex = 4;
+            this.lstPlaylistSongs.FormattingEnabled = true;
+            this.lstPlaylistSongs.Location = new System.Drawing.Point(220, 91);
+            this.lstPlaylistSongs.Name = "lstPlaylistSongs";
+            this.lstPlaylistSongs.Size = new System.Drawing.Size(120, 95);
+            this.lstPlaylistSongs.TabIndex = 4;
             // 
             // btnAddSong
             // 
-            this.btnAddSong.Location = new System.Drawing.Point(138, 106);
+            this.btnAddSong.Location = new System.Drawing.Point(138, 122);
             this.btnAddSong.Name = "btnAddSong";
             this.btnAddSong.Size = new System.Drawing.Size(75, 23);
             this.btnAddSong.TabIndex = 5;
             this.btnAddSong.Text = ">>";
             this.btnAddSong.UseVisualStyleBackColor = true;
+            this.btnAddSong.Click += new System.EventHandler(this.btnAddSong_Click);
             // 
             // btnRemoveSong
             // 
-            this.btnRemoveSong.Location = new System.Drawing.Point(139, 144);
+            this.btnRemoveSong.Location = new System.Drawing.Point(240, 192);
             this.btnRemoveSong.Name = "btnRemoveSong";
             this.btnRemoveSong.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveSong.TabIndex = 6;
-            this.btnRemoveSong.Text = "<<";
+            this.btnRemoveSong.Text = "Remove";
             this.btnRemoveSong.UseVisualStyleBackColor = true;
             // 
             // AddPlaylist
@@ -104,8 +106,8 @@ namespace MusicApp
             this.ClientSize = new System.Drawing.Size(666, 369);
             this.Controls.Add(this.btnRemoveSong);
             this.Controls.Add(this.btnAddSong);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstPlaylistSongs);
+            this.Controls.Add(this.lstSongs);
             this.Controls.Add(this.btnAddPlaylist);
             this.Controls.Add(this.txtPlaylistName);
             this.Controls.Add(this.lblPlaylistName);
@@ -121,8 +123,8 @@ namespace MusicApp
         private System.Windows.Forms.Label lblPlaylistName;
         private System.Windows.Forms.TextBox txtPlaylistName;
         private System.Windows.Forms.Button btnAddPlaylist;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lstSongs;
+        private System.Windows.Forms.ListBox lstPlaylistSongs;
         private System.Windows.Forms.Button btnAddSong;
         private System.Windows.Forms.Button btnRemoveSong;
     }

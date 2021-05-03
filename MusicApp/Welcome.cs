@@ -36,6 +36,7 @@ namespace MusicApp
                 {
                     if (user.Password == txtPassword.Text)
                     {
+                        Global.UserId = user.Id;
                         MessageBox.Show("Successfully logged in. Redirecting...");
                         MainMenu main = new MainMenu();
                         //Close();

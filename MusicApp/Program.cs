@@ -19,4 +19,17 @@ namespace MusicApp
             Application.Run(new Welcome());
         }
     }
+
+    static class Global
+    {
+        private static int userId;
+
+        public static int UserId
+        {
+            get { return userId; }
+            set { userId = value; }
+        }
+
+
+    }
 }
