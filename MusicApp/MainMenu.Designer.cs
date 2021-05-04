@@ -36,6 +36,7 @@ namespace MusicApp
             this.btnAddPlaylist = new System.Windows.Forms.Button();
             this.lstPlaylists = new System.Windows.Forms.ListBox();
             this.lvwSongs = new System.Windows.Forms.ListView();
+            this.btnPlay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddArtist
@@ -94,6 +95,7 @@ namespace MusicApp
             this.lstPlaylists.Name = "lstPlaylists";
             this.lstPlaylists.Size = new System.Drawing.Size(147, 381);
             this.lstPlaylists.TabIndex = 5;
+            this.lstPlaylists.SelectedIndexChanged += new System.EventHandler(this.lstPlaylists_SelectedIndexChanged);
             // 
             // lvwSongs
             // 
@@ -103,12 +105,28 @@ namespace MusicApp
             this.lvwSongs.Size = new System.Drawing.Size(488, 381);
             this.lvwSongs.TabIndex = 6;
             this.lvwSongs.UseCompatibleStateImageBehavior = false;
+            this.lvwSongs.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvwSongs_ItemChecked);
+            this.lvwSongs.SelectedIndexChanged += new System.EventHandler(this.lvwSongs_SelectedIndexChanged);
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.Enabled = false;
+            this.btnPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlay.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPlay.Location = new System.Drawing.Point(668, 171);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(97, 83);
+            this.btnPlay.TabIndex = 7;
+            this.btnPlay.Text = "PLAY";
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.lvwSongs);
             this.Controls.Add(this.lstPlaylists);
             this.Controls.Add(this.btnAddPlaylist);
@@ -132,5 +150,6 @@ namespace MusicApp
         private System.Windows.Forms.Button btnAddPlaylist;
         private System.Windows.Forms.ListBox lstPlaylists;
         private System.Windows.Forms.ListView lvwSongs;
+        private System.Windows.Forms.Button btnPlay;
     }
 }

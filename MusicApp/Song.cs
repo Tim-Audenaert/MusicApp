@@ -17,7 +17,7 @@ namespace MusicApp
         public Album Album { get; set; }
         public Artist Artist { get; set; }
         public string Title { get; set; }
-        public DateTime Length { get; set; }
+        public int Length { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         [Column(Order = 1)]

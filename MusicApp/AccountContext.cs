@@ -14,7 +14,21 @@ namespace MusicApp
             //Database.SetInitializer(new CreateDatabaseIfNotExists<AccountContext>());
             //Database.SetInitializer(new DropCreateDatabaseAlways<AccountContext>());
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<AccountContext>());
+
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Playlist>()
+                .HasMany(a => a.Songs)
+                .WithMany(s => s.Playlists)
+                .Map(cs =>
+                {
+                    cs.MapLeftKey("Playlist_Id");
+                    cs.MapRightKey("Song_Id");
+                    cs.ToTable("PlaylistSongs");
+                });
+        }
+
 
         public DbSet<User> Users { get; set; }
         public DbSet<Artist> Artists { get; set; }

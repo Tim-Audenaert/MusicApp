@@ -36,10 +36,10 @@ namespace MusicApp
                     Title = txtTitle.Text,
                     Album = ctx.Albums.FirstOrDefault(x => x.Id == ((Album)lstAlbums.SelectedItem).Id),
                     Artist = ctx.Artists.FirstOrDefault(x => x.Id == ((Artist)lstArtists.SelectedItem).Id),
-                    Length = DateTime.Now,
+                    Length = 380,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
-                }); ;
+                }) ;
                 ctx.SaveChanges();
             }
             MessageBox.Show($"{txtTitle.Text} has been added to the album.");

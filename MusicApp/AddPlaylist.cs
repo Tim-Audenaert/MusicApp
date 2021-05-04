@@ -36,7 +36,7 @@ namespace MusicApp
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
                 };
-                foreach (var item in lstSongs.Items)
+                foreach (var item in lstPlaylistSongs.Items)
                 {
                     ctx.Songs.Attach(item as Song);
                     newPlaylist.Songs.Add(item as Song);
